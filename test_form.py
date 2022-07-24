@@ -1,6 +1,3 @@
-import os
-import sys
-sys.path.append(os.path.abspath(r"test_form.py"))
 from tests.helper.acceptance_test_modul import url_open_size, add_file
 from tests.controls.application_manager import app
 from env import *
