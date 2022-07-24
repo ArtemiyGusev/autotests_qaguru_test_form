@@ -1,13 +1,14 @@
 import allure
 from allure_commons.types import Severity
-from acceptance_test_modul import url_open_size, add_file
+from qqq.qwe import qw111
+from tests.helper.acceptance_test_modul import url_open_size, add_file
 from tests.controls.application_manager import app
 from env import *
 from selene.support.shared.jquery_style import s, ss
 
 
 def test_case_practice_form():
-    allure.dynamic.tag("Web application")
+    allure.dynamic.tag(qw111)
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты automation-practice-form")
     allure.dynamic.story("Проверка отправленных данных в таблице через форму")
