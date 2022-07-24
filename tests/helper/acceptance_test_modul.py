@@ -9,5 +9,6 @@ def add_file(element, file_name):
 
 
 def url_open_size(url, width=1920, height=1080):
+    browser.config.browser_name = 'chrome'
     browser.open(url)
     browser.config.driver.set_window_size(width, height)
