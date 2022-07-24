@@ -1,3 +1,5 @@
+from tests.helper.acceptance_test_modul import *
+
 def test_case_1():
     pass
 # from tests.helper.acceptance_test_modul import url_open_size, add_file
