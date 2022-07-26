@@ -15,7 +15,7 @@ def test_case_practice_form():
     with allure.step('Открываем /automation-practice-form'):
         url_open_size('/automation-practice-form')
 
-    with allure.step('Заполняем поля данными'):
+    with allure.step('Заполняем поля данными1'):
         s('//*[@id="firstName"]').type('Jack')
         s('//*[@id="lastName"]').type('Shepard')
         s('//*[@id="userEmail"]').type('Jack@mail.ru')
