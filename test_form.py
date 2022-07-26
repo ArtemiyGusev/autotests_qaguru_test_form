@@ -1,4 +1,4 @@
-from tests.helper.acceptance_test_modul import url_open_size, add_file
+from tests.helper.acceptance_test_modul import url_open_size, add_file, remove_element
 from tests.controls.application_manager import app
 from env import *
 import allure
@@ -14,6 +14,8 @@ def test_case_practice_form():
 
     with allure.step('Открываем /automation-practice-form'):
         url_open_size('/automation-practice-form')
+        remove_element('#footer')
+        remove_element('#fixedban')
 
     with allure.step('Заполняем поля данными'):
         s('//*[@id="firstName"]').type('Jack')
@@ -26,7 +28,7 @@ def test_case_practice_form():
         app.subject(s(subjects_input)).select_element_in_list('g', select_element_in_subject)
 
     with allure.step('Выбираем текущую дату'):
-        app.date_picker(s(date_of_birth_input)).select_date_in_datepicker()
+        app.date_picker(s(date_of_birth_input)).select_date_in_datepicker(date_of_birth)
 
     with allure.step('Выбираем пол: male'):
         s(gender_select_male).click()

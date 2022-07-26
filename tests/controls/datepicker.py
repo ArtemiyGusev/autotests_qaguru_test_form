@@ -17,4 +17,4 @@ class DatePicker:
             self.element.click()
             s(elements_in_datepicker).s('[value="%d' % now_date.year + '"]').click()
             s(elements_in_datepicker).s('[value="%d' % (now_date.month - 1) + '"]').click()
-            s(elements_in_datepicker).s('[aria-label*="%d' % now_date.day + '"]').click()
+            s(elements_in_datepicker).s('[aria-label*="%s' % now_date.strftime("%B ") + '%d' % now_date.day + '"]').click()

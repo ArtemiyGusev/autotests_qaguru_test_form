@@ -12,3 +12,7 @@ def url_open_size(url, width=1920, height=1080):
     browser.config.browser_name = 'chrome'
     browser.open(url)
     browser.config.driver.set_window_size(width, height)
+
+
+def remove_element(element):
+    browser.execute_script(f"var el = document.querySelectorAll('{element}'); if (el.length > 0) {{ el[0].remove(); }}")
