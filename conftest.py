@@ -13,11 +13,6 @@ def pytest_addoption(parser):
     )
 
 
-# @pytest.fixture(scope='session')
-# def browser_name(request):
-#     return request.config.getoption('--browser')
-
-
 @pytest.fixture(scope='function', autouse=True)
 def driver_init(request):
     browser_version = request.config.getoption('--browser_version')
