@@ -2,6 +2,7 @@ import pytest
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from utils import attach
 
 
 @pytest.fixture(scope='function', autouse=True)
@@ -23,5 +24,10 @@ def driver_init():
 
     browser.config.driver = driver
     browser.config.base_url = 'https://demoqa.com'
+
     yield
+
+    attach.add_attachment(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
     browser.quit()
