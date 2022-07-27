@@ -3,6 +3,7 @@ from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utils import attach
+from selene import Browser, Config
 
 
 @pytest.fixture(scope='function', autouse=True)
@@ -25,10 +26,13 @@ def driver_init():
     browser.config.driver = driver
     browser.config.base_url = 'https://demoqa.com'
 
-    yield
+    browser_config = Browser(Config(driver))
 
-    attach.add_attachment(browser)
-    attach.add_logs(browser)
-    attach.add_html(browser)
-    attach.add_video(browser)
+    yield browser_config
+
+    attach.add_attachment(browser_config)
+    attach.add_logs(browser_config)
+    attach.add_html(browser_config)
+    attach.add_video(browser_config)
+
     browser.quit()
