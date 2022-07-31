@@ -15,4 +15,7 @@ def url_open_size(url, width=1920, height=1080):
 
 
 def remove_element(element):
-    browser.execute_script(f"var el = document.querySelectorAll('{element}'); if (el.length > 0) {{ el[0].remove(); }}")
+    try:
+        browser.execute_script(f"var el = document.querySelectorAll('{element}'); if (el.length > 0) {{ el[0].remove(); }}")
+    except:
+        pass
